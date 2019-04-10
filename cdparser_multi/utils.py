@@ -13,7 +13,8 @@ def normalize(word):
 
 
 def strong_normalize(word):
-    w = ftfy.fix_text(word.lower())
+    #w = ftfy.fix_text(word.lower())
+    w = word.lower()
     w = re.sub(r".+@.+", "*EMAIL*", w)
     w = re.sub(r"@\w+", "*AT*", w)
     w = re.sub(r"(https?://|www\.).*", "*url*", w)
